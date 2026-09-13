@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+{% block content %}
+  <a href="{% url "blog:article-create" %}">New article</a>
+  <ul class="article-container">
+    {% include "./article_list.html" %}
+  </ul>
+  <button class="btn btn-primary" id="show-more" onClick="showMore()">Show more</button>
+  {% include "../pagination.html" %}
+  <input type="hidden"
+         name="page-cur"
+         id="page-cur"
+         value="{{ page_obj.number }}">
+  <input type="hidden"
+         name="page-num"
+         id="page-num"
+         value="{{ page_obj.paginator.num_pages }}">
+{% endblock content %}
