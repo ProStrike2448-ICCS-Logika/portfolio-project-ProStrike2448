@@ -6,8 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+    gcc
 
 COPY requirements.txt /app/
 
