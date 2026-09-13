@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+{% block title %}
+  {{ article.title }}
+{% endblock title %}
+{% block content %}
+  <h1>{{ article.title }}</h1>
+  <img class="img-fluid" src="{{ article.banner.url }}" alt="Article image">
+  <p>{{ article.content }}</p>
+  <p>Status: {{ article.status }}</p>
+  <p>Date created: {{ article.created_date|date:"d.m.Y" }}</p>
+  <a href="{% url "blog:article-update" article.pk %}">Update</a>
+  <a href="{% url "blog:article-delete" article.pk %}">Delete</a>
+  <a href="{% url "blog:article-list" %}">Go back</a>
+{% endblock content %}
